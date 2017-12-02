@@ -23,3 +23,16 @@ body {
   display: flex;
   width: 100%;
 }
+
+.logo {
+  display: block;
+  font-family: DecimaMonoPro, monospace;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.letter {
+  display: inline-block;
+}
