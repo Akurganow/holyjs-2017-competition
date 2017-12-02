@@ -1,11 +1,13 @@
 body {
   margin: 0;
   padding: 0;
+  -ms-font-feature-settings: normal;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -22,6 +24,8 @@ body {
   color: #fff;
   display: flex;
   width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .letter {
