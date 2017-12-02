@@ -24,6 +24,38 @@ body {
   width: 100%;
 }
 
+.letter {
+  display: inline-block;
+
+  &.letter-filled {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      background: #fff;
+    }
+  }
+
+  &.letter-b {
+    &:before {
+      top: 8px;
+      left: 5px;
+      width: 4px;
+      height: 7px;
+    }
+  }
+
+  &.letter-p {
+    &:before {
+      top: 8px;
+      left: 5px;
+      width: 4px;
+      height: 7px;
+    }
+  }
+}
+
 .logo {
   display: block;
   font-family: DecimaMonoPro, monospace;
@@ -31,8 +63,31 @@ body {
   font-weight: bold;
   line-height: 1;
   letter-spacing: 0;
-}
 
-.letter {
-  display: inline-block;
+  & .letter {
+    &:nth-child(1n) {
+      margin-right: 6px;
+      transform: translateY(0);
+    }
+
+    &:nth-child(2n) {
+      margin-right: 8px;
+      transform: translateY(-9px);
+    }
+
+    &:nth-child(3n) {
+      margin-right: -4px;
+      transform: translateY(10px);
+    }
+
+    &:nth-child(4n) {
+      margin-right: 5px;
+      transform: translateY(-2px);
+    }
+
+    &:nth-child(5n) {
+      margin-right: 4px;
+      transform: translateY(-7px);
+    }
+  }
 }
