@@ -23,5 +23,5 @@
 
 ## Метрики
 
-- Размер собранных bundle.css и bundle.js файлов после команды `NODE_ENV=production yarn build`;
-- Время на layout и repaint (замер по вкладке Perfomance в Chrome Dev Tools).
+- В первую очередь будет учитываться размер собранных bundle.css и bundle.js файлов после команды `NODE_ENV=production yarn build`;
+- Во вторую очередь при равных размерах время на layout и repaint (замер по вкладке Perfomance в Chrome Dev Tools).
