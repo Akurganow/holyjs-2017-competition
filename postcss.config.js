@@ -1,7 +1,4 @@
-const NODE_ENV = process.env.NODE_ENV ? JSON.stringify(process.env.NODE_ENV) : JSON.stringify('development')
-const isDev = NODE_ENV === JSON.stringify('development')
-
-const config = () => ({
+module.exports = () => ({
   plugins: {
     'postcss-import': {path: ['src']},
     'postcss-custom-media': {
@@ -15,5 +12,3 @@ const config = () => ({
     'postcss-cssnext': true
   },
 })
-
-module.exports = config

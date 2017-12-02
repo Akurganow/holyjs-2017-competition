@@ -1,6 +1,6 @@
 {
   "presets": [
-    ["env", {"targets": {"browsers": ["> 2%", "not ie > 0"]}}]
+    ["env", {"targets": {"browsers": ["Chrome >= 62"]}}]
   ],
   "plugins": [
     "transform-class-properties",

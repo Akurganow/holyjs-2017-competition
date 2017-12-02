@@ -2,13 +2,10 @@ const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-
-const NODE_ENV = process.env.NODE_ENV ? JSON.stringify(process.env.NODE_ENV) : JSON.stringify('development')
-const isDev = NODE_ENV === JSON.stringify('development')
+const MinifyPlugin = require('babel-minify-webpack-plugin')
 
 const plugins = [
   new webpack.NoEmitOnErrorsPlugin(),
-  new webpack.DefinePlugin({'process.env': {NODE_ENV}}),
   new ExtractTextPlugin({
     filename: 'bundle.css',
     disable: false,
@@ -16,14 +13,18 @@ const plugins = [
   }),
   new OptimizeCssAssetsPlugin({
     cssProcessorOptions: {
-      preset: ['default', {
-        discardComments: {removeAll: true},
-        mergeIdents: true,
-        calc: false,
-      }],
-      map: isDev,
+      preset: [
+        'default',
+        {
+          discardComments: { removeAll: true },
+          mergeIdents: true,
+          calc: false,
+        },
+      ],
+      map: true,
     },
   }),
+  new MinifyPlugin(),
   new webpack.optimize.OccurrenceOrderPlugin(),
   new webpack.ProvidePlugin({
     EventSource: 'imports-loader?this=>global!exports-loader?global.EventSource!event-source-polyfill',
@@ -31,7 +32,7 @@ const plugins = [
 ]
 
 let config = {
-  entry: {app: path.join(process.cwd(), 'src/index.js')},
+  entry: { app: path.join(process.cwd(), 'src/index.js') },
 
   output: {
     path: path.join(process.cwd(), 'static'),
@@ -49,14 +50,14 @@ let config = {
               loader: 'css-loader',
               options: {
                 importLoaders: 1,
-                sourceMap: isDev,
+                sourceMap: true,
               },
             },
             {
               loader: 'postcss-loader',
               options: {
-                config: {path: './postcss.config.js'},
-                sourceMap: isDev,
+                config: { path: './postcss.config.js' },
+                sourceMap: true,
               },
             },
           ],
@@ -70,7 +71,7 @@ let config = {
     ],
   },
   plugins,
-  devtool: isDev ? 'source-map' : false,
+  devtool: 'source-map',
 }
 
 module.exports = config
