@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'DecimaMonoPro';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/assets/DecimaMonoPro.woff2');
+}
+@font-face {
+  font-family: 'DecimaMonoPro';
+  font-style: normal;
+  font-weight: bold;
+  src: url('/assets/DecimaMonoPro-Bold.woff2');
+}
