@@ -1,0 +1,14 @@
+{
+  "presets": [
+    ["env", {"targets": {"browsers": ["> 2%", "not ie > 0"]}}]
+  ],
+  "plugins": [
+    "transform-class-properties",
+    "transform-object-rest-spread"
+  ],
+  "env": {
+    "production": {
+      "presets": ["minify"]
+    }
+  }
+}
