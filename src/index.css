@@ -1,4 +1,9 @@
+html {
+  height:100%;
+}
+
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
   -ms-font-feature-settings: normal;
@@ -17,19 +22,31 @@ body {
 
 .navbar {
   position: absolute;
-  top: 0;
-  left: 0;
   height: 50px;
   background-color: #000;
   color: #fff;
   display: flex;
   width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .letter {
   display: inline-block;
+
+  &.displaced {
+     position: absolute !important;
+     margin-right: 0 !important;
+     transform: none !important;
+  }
+
+  &.inverted {
+     color: #000;
+
+     &.letter-filled {
+       &:before {
+         background: #000;
+       }
+     }
+  }
 
   &.letter-filled {
     position: relative;
@@ -41,16 +58,7 @@ body {
     }
   }
 
-  &.letter-b {
-    &:before {
-      top: 8px;
-      left: 5px;
-      width: 4px;
-      height: 7px;
-    }
-  }
-
-  &.letter-p {
+  &.letter-b, &.letter-p {
     &:before {
       top: 8px;
       left: 5px;
